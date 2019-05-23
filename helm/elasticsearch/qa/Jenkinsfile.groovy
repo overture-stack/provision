@@ -3,7 +3,7 @@ def version = "UNKNOWN"
 pipeline {
     agent {
         kubernetes {
-            label 'maestro-executor'
+            label 'provision-executor'
             yaml """
 apiVersion: v1
 kind: Pod
