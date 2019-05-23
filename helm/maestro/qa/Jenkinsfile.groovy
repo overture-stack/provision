@@ -1,5 +1,3 @@
-def commit = "UNKNOWN"
-def version = "UNKNOWN"
 pipeline {
     agent {
         kubernetes {
@@ -27,10 +25,11 @@ spec:
                         sh 'helm repo add overture  https://overture-stack.github.io/charts-server/'
                         sh """
                             helm upgrade --kubeconfig $KUBECONFIG --install --namespace=overture-qa maestro-qa \\
-                            overture/maestro -f helm/maestro/qa/values.yaml --set image.tag=${version}.${commit}
+                            overture/maestro -f helm/maestro/qa/values.yaml
                            """
                     }
                 }
             }
         }
+    }
 }

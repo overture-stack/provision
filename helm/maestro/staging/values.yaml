@@ -21,7 +21,7 @@ extraEnv:
     value: "exclusion-rules.yml"
 
   - name : MAESTRO_ELASTICSEARCH_CLUSTER_NODES
-    value: "elasticsearch:9200"
+    value: "elasticsearch"
 
   - name : MAESTRO_ELASTICSEARCH_INDEXES_FILE_CENTRIC_ALIAS
     value: "file_centric"

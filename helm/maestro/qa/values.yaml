@@ -1,6 +1,8 @@
+image.tag: 0.1.0.84dfc14-RC
+
 extraEnv:
   - name : MAESTRO_KAFKA_BROKER
-    value: "kafka"
+    value: "kafka:9092"
 
   - name : MAESTRO_KAFKA_INDEXING_TOPIC
     value: "maestro_index_requests"
@@ -21,7 +23,7 @@ extraEnv:
     value: "exclusion-rules.yml"
 
   - name : MAESTRO_ELASTICSEARCH_CLUSTER_NODES
-    value: "elasticsearch-master"
+    value: "elasticsearch-master:9200"
 
   - name : MAESTRO_ELASTICSEARCH_INDEXES_FILE_CENTRIC_ALIAS
     value: "file_centric"

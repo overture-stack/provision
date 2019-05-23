@@ -27,7 +27,7 @@ spec:
                         sh 'helm repo add elastic https://helm.elastic.co'
                         sh """
                             helm upgrade --kubeconfig $KUBECONFIG --install --namespace=overture-qa elasticsearch-qa \\
-                            elastic/elasticsearch -f helm/infrastructure/elasticsearch/qa/values.yaml --version 7.1.0
+                            elastic/elasticsearch -f helm/elasticsearch/qa/values.yaml --version 7.1.0
                            """
                     }
                 }
