@@ -1,8 +1,8 @@
-image.tag: 0.1.0.84dfc14-RC
+image.tag: edge
 
 extraEnv:
   - name : MAESTRO_KAFKA_BROKER
-    value: "kafka:9092"
+    value: "confluent-qa-cp-kafka:9092"
 
   - name : MAESTRO_KAFKA_INDEXING_TOPIC
     value: "maestro_index_requests"
