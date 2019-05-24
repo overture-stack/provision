@@ -25,7 +25,7 @@ spec:
                         sh 'helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/'
                         sh """
                             helm upgrade --kubeconfig $KUBECONFIG --install --namespace=overture-qa confluent-qa \\
-                            cp-helm-charts -f helm/kafka/qa/values.yaml
+                            confluentinc/cp-helm-charts -f helm/kafka/qa/values.yaml
                            """
                     }
                 }
