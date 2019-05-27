@@ -1,4 +1,6 @@
 image.tag: edge
+image:
+  pullPolicy: Always
 
 extraEnv:
   - name : MAESTRO_KAFKA_BROKER
