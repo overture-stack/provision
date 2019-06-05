@@ -3,7 +3,6 @@ image:
   pullPolicy: Always
 
 extraEnv:
-  SERVER_PORT: "11235"
   MAESTRO_ELASTICSEARCH_CLUSTERNODES_0: "http://elasticsearch-master:9200"
   SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka-overture-qa-cp-kafka:9092"
   # repos
