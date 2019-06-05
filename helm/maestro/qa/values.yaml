@@ -2,6 +2,11 @@ image.tag: edge
 image:
   pullPolicy: Always
 
+ingress:
+  enabled: true
+  hosts:
+    - maestro.qa.overture.bio
+
 extraEnv:
   MAESTRO_ELASTICSEARCH_CLUSTERNODES_0: "http://elasticsearch-master:9200"
   SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka-overture-qa-cp-kafka:9092"
