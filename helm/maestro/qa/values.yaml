@@ -4,8 +4,10 @@ image:
 
 ingress:
   enabled: true
+  annotations: {}
   hosts:
     - host: maestro.qa.overture.bio
+      paths: []
 
 extraEnv:
   MAESTRO_ELASTICSEARCH_CLUSTERNODES_0: "http://elasticsearch-master:9200"
