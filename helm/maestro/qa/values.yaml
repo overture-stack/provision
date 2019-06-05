@@ -1,4 +1,4 @@
-image.tag: latest
+image.tag: edge
 image:
   pullPolicy: Always
 
