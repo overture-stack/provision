@@ -3,125 +3,209 @@ image:
   pullPolicy: Always
 
 extraEnv:
-  - name : MAESTRO_KAFKA_BROKER
-    value: "confluent-qa-cp-kafka:9092"
+  - name: SERVER_PORT
+    value: "11235"
 
-  - name : MAESTRO_KAFKA_INDEXING_TOPIC
-    value: "maestro_index_requests"
-
-  - name : MAESTRO_SONG_MAX_RETRIES
+  - name: MAESTRO_SONG_MAXRETRIES
     value: "3"
 
-  - name : MAESTRO_SONG_TIMEOUT_SEC_STUDY
+  - name: MAESTRO_SONG_TIMEOUTSEC_STUDY
     value: "100"
 
-  - name : MAESTRO_SONG_TIMEOUT_SEC_ANALYSIS
+  - name: MAESTRO_SONG_TIMEOUTSEC_ANALYSIS
     value: "5"
 
-  - name : MAESTRO_SONG_INDEXABLE_STUDY_STATUS
-    value: "PUBLISHED"
+  - name: MAESTRO_ELASTICSEARCH_CLUSTERNODES_0
+    value: "http://elasticsearch-master:9200"
 
-  - name : MAESTRO_EXCLUSION_RULES_FILE_NAME
-    value: "exclusion-rules.yml"
-
-  - name : MAESTRO_ELASTICSEARCH_CLUSTER_NODES
-    value: "elasticsearch-master:9200"
-
-  - name : MAESTRO_ELASTICSEARCH_INDEXES_FILE_CENTRIC_ALIAS
+  - name: MAESTRO_ELASTICSEARCH_INDEXES_FILECENTRIC_NAME
     value: "file_centric"
 
-  - name : MAESTRO_ELASTICSEARCH_CLIENT_DOCS_PER_BULK_REQ_MAX
+  - name: MAESTRO_ELASTICSEARCH_INDEXES_FILECENTRIC_ALIAS
+    value: "file_centric"
+
+  - name: MAESTRO_ELASTICSEARCH_CLIENT_DOCSPERBULKREQMAX
     value: "5000"
 
-  - name : MAESTRO_ELASTICSEARCH_CLIENT_CONNECTION_TIMEOUT
+  - name: MAESTRO_ELASTICSEARCH_CLIENT_CONNECTIONTIMEOUT
     value: "5000"
 
-  - name : MAESTRO_ELASTICSEARCH_CLIENT_SOCKET_TIMEOUT
+  - name: MAESTRO_ELASTICSEARCH_CLIENT_SOCKETTIMEOUT
     value: "10000"
 
-  - name : MAESTRO_ELASTICSEARCH_CLIENT_RETRY_MAX_ATTEMPTS
+  - name: MAESTRO_ELASTICSEARCH_CLIENT_RETRY_MAXATTEMPTS
     value: "3"
 
-  - name : MAESTRO_ELASTICSEARCH_CLIENT_RETRY_WAIT_DURATION_MILLIS
+  - name: MAESTRO_ELASTICSEARCH_CLIENT_RETRY_WAITDURATIONMILLIS
     value: "500"
 
-  - name : MAESTRO_REPOSITORIES_0_CODE
+  - name: MAESTRO_REPOSITORIES_0_CODE
     value: "collab"
 
-  - name : MAESTRO_REPOSITORIES_0_URL
+  - name: MAESTRO_REPOSITORIES_0_URL
     value: "https://song.cancercollaboratory.org"
 
-  - name : MAESTRO_REPOSITORIES_0_NAME
+  - name: MAESTRO_REPOSITORIES_0_NAME
     value: "collaboratory"
 
-  - name : MAESTRO_REPOSITORIES_0_DATAPATH
+  - name: MAESTRO_REPOSITORIES_0_DATAPATH
     value: "/oicr.icgc/data"
 
-  - name : MAESTRO_REPOSITORIES_0_METADATAPATH
+  - name: MAESTRO_REPOSITORIES_0_METADATAPATH
     value: "/oicr.icgc.meta/metadata"
 
-  - name : MAESTRO_REPOSITORIES_0_STORAGETYPE
+  - name: MAESTRO_REPOSITORIES_0_STORAGETYPE
     value: "S3"
 
-  - name : MAESTRO_REPOSITORIES_0_ORGANIZATION
+  - name: MAESTRO_REPOSITORIES_0_ORGANIZATION
     value: "ICGC"
 
-  - name : MAESTRO_REPOSITORIES_0_COUNTRY
+  - name: MAESTRO_REPOSITORIES_0_COUNTRY
     value: "CA"
 
-  - name : MAESTRO_REPOSITORIES_1_CODE
-    value: "aws"
+  - name: MAESTRO_REPOSITORIES_1_CODE
+    value: "song.overture"
 
-  - name : MAESTRO_REPOSITORIES_1_URL
-    value: "https://virginia.song.icgc.org"
+  - name: MAESTRO_REPOSITORIES_1_URL
+    value: "http://localhost:8080"
 
-  - name : MAESTRO_REPOSITORIES_1_NAME
-    value: "aws virginia"
+  - name: MAESTRO_REPOSITORIES_1_NAME
+    value: "local song"
 
-  - name : MAESTRO_REPOSITORIES_1_METADATAPATH
+  - name: MAESTRO_REPOSITORIES_1_METADATAPATH
     value: "/oicr.icgc.meta/metadata"
 
-  - name : MAESTRO_REPOSITORIES_1_STORAGETYPE
+  - name: MAESTRO_REPOSITORIES_1_STORAGETYPE
     value: "S3"
 
-  - name : MAESTRO_REPOSITORIES_1_ORGANIZATION
+  - name: MAESTRO_REPOSITORIES_1_ORGANIZATION
+    value: "overture"
+
+  - name: MAESTRO_REPOSITORIES_1_COUNTRY
+    value: "LH"
+
+  - name: MAESTRO_REPOSITORIES_2_CODE
+    value: "aws"
+
+  - name: MAESTRO_REPOSITORIES_2_URL
+    value: "https://virginia.song.icgc.org"
+
+  - name: MAESTRO_REPOSITORIES_2_NAME
+    value: "aws virginia"
+
+  - name: MAESTRO_REPOSITORIES_2_METADATAPATH
+    value: "/oicr.icgc.meta/metadata"
+
+  - name: MAESTRO_REPOSITORIES_2_STORAGETYPE
+    value: "S3"
+
+  - name: MAESTRO_REPOSITORIES_2_ORGANIZATION
     value: "ICGC"
 
-  - name : MAESTRO_REPOSITORIES_1_COUNTRY
+  - name: MAESTRO_REPOSITORIES_2_COUNTRY
     value: "US"
 
-  - name : MAESTRO_FAILURE_LOG_ENABLED
+  - name: MAESTRO_FAILURELOG_ENABLED
     value: "true"
 
-  - name : MAESTRO_FAILURE_LOG_DIR
-    value: "/app-logs"
+  - name: MAESTRO_FAILURELOG_DIR
+    value: "${user.home}/logs/maestro"
 
-  - name : LOGGING_LEVEL_ROOT
-    value: "INFO"
+  - name: MAESTRO_NOTIFICATIONS_SLACK_ENABLED
+    value: "false"
 
-  - name : LOGGING_LEVEL_BIO_OVERTURE
-    value: "TRACE"
+  - name: MAESTRO_NOTIFICATIONS_SLACK_NOTIFIEDON_0
+    value: "ALL"
 
-  - name : LOGGING_LEVEL_BIO_OVERTURE_MAESTRO_DOMAIN_ENTITIES_INDEXING_RULES_IDEXCLUSIONRULE
-    value: "INFO"
+  - name: MAESTRO_NOTIFICATIONS_SLACK_URL
+    value: "https://hooks.slack.com/services/SECRET_TOKEN"
 
-  - name : LOGGING_LEVEL_ORG_APACHE_KAFKA_CLIENTS
-    value: "WARN"
+  - name: MAESTRO_NOTIFICATIONS_SLACK_CHANNEL
+    value: "maestro-alerts"
 
-  - name : MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
-    value: "*"
-
-  - name : MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS
-    value: "ALWAYS"
-
-  - name : SPRING_APPLICATION_NAME
+  - name: MAESTRO_NOTIFICATIONS_SLACK_USERNAME
     value: "maestro"
 
-  - name : SPRING_OUTPUT_ANSI_ENABLED
+  - name: MAESTRO_NOTIFICATIONS_SLACK_MAXDATALENGTH
+    value: "1000"
+
+  - name: MAESTRO_NOTIFICATIONS_SLACK_TEMPLATES_ERROR
+    value: ":bangbang: Error : ##TYPE##, Error Info: ```##DATA##```"
+
+  - name: MAESTRO_NOTIFICATIONS_SLACK_TEMPLATES_WARNING
+    value: ":warning: ##TYPE## ```##DATA##```"
+
+  - name: MAESTRO_NOTIFICATIONS_SLACK_TEMPLATES_INFO
+    value: ":information_source: ##TYPE## ```##DATA##```"
+
+  - name: MAESTRO_EXCLUSIONRULES_BYID_STUDY_0
+    value: "test123"
+
+  - name: LOGGING_LEVEL_ROOT
+    value: "INFO"
+
+  - name: LOGGING_LEVEL_BIO_OVERTURE
+    value: "TRACE"
+
+  - name: LOGGING_LEVEL_BIO_OVERTURE_MAESTRO_DOMAIN_ENTITIES_INDEXING_RULES_IDEXCLUSIONRULE
+    value: "INFO"
+
+  - name: LOGGING_LEVEL_ORG_APACHE_KAFKA_CLIENTS
+    value: "INFO"
+
+  - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+    value: "*"
+
+  - name: MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS
     value: "ALWAYS"
 
-  - name : SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS
-    value: "${maestro.kafka.broker}"
+  - name: SPRING_APPLICATION_NAME
+    value: "maestro"
 
-  - name : SPRING_CLOUD_STREAM_BINDINGS_INPUT_DESTINATION
-    value: "${maestro.kafka.indexing_topic}"
+  - name: SPRING_OUTPUT_ANSI_ENABLED
+    value: "ALWAYS"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS
+    value: "confluent-qa-cp-kafka:9092"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDINGS_SONG-INPUT_CONSUMER_ENABLEDLQ
+    value: "true"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDINGS_SONG-INPUT_CONSUMER_DLQNAME
+    value: "maestro_song_analysis_dlq"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDINGS_SONG-INPUT_CONSUMER_AUTOCOMMITONERROR
+    value: "true"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDINGS_SONG-INPUT_CONSUMER_AUTOCOMMITOFFSET
+    value: "true"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDINGS_INPUT_CONSUMER_ENABLEDLQ
+    value: "true"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDINGS_INPUT_CONSUMER_DLQNAME
+    value: "maestro_index_requests_dlq"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDINGS_INPUT_CONSUMER_AUTOCOMMITONERROR
+    value: "true"
+
+  - name: SPRING_CLOUD_STREAM_KAFKA_BINDINGS_INPUT_CONSUMER_AUTOCOMMITOFFSET
+    value: "true"
+
+  - name: SPRING_CLOUD_STREAM_BINDINGS_INPUT_DESTINATION
+    value: "maestro_index_requests"
+
+  - name: SPRING_CLOUD_STREAM_BINDINGS_INPUT_GROUP
+    value: "requestsConsumerGrp"
+
+  - name: SPRING_CLOUD_STREAM_BINDINGS_INPUT_CONSUMER_MAXATTEMPTS
+    value: "1"
+
+  - name: SPRING_CLOUD_STREAM_BINDINGS_SONG-INPUT_DESTINATION
+    value: "song-analysis"
+
+  - name: SPRING_CLOUD_STREAM_BINDINGS_SONG-INPUT_GROUP
+    value: "songConsumerGrp"
+
+  - name: SPRING_CLOUD_STREAM_BINDINGS_SONG-INPUT_CONSUMER_MAXATTEMPTS
+    value: "1"
