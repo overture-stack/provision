@@ -5,7 +5,7 @@ image:
 extraEnv:
   SERVER_PORT: "11235"
   MAESTRO_ELASTICSEARCH_CLUSTERNODES_0: "http://elasticsearch-master:9200"
-  SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "confluent-qa-cp-kafka:9092"
+  SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka-overture-qa-cp-kafka:9092"
   # repos
   MAESTRO_REPOSITORIES_0_CODE: "collab"
   MAESTRO_REPOSITORIES_0_URL: "https://song.cancercollaboratory.org"
