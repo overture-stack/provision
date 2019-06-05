@@ -3,55 +3,23 @@ image:
   pullPolicy: Always
 
 extraEnv:
-  - name: SERVER_PORT
-    value: "11235"
-
-  - name: MAESTRO_ELASTICSEARCH_CLUSTERNODES_0
-    value: "http://elasticsearch-master:9200"
-
-  - name: SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS
-    value: "confluent-qa-cp-kafka:9092"
-
-  - name: MAESTRO_REPOSITORIES_0_CODE
-    value: "collab"
-
-  - name: MAESTRO_REPOSITORIES_0_URL
-    value: "https://song.cancercollaboratory.org"
-
-  - name: MAESTRO_REPOSITORIES_0_NAME
-    value: "collaboratory"
-
-  - name: MAESTRO_REPOSITORIES_0_ORGANIZATION
-    value: "ICGC"
-
-  - name: MAESTRO_REPOSITORIES_0_COUNTRY
-    value: "CA"
-
-  - name: MAESTRO_REPOSITORIES_1_CODE
-    value: "song.overture"
-
-  - name: MAESTRO_REPOSITORIES_1_URL
-    value: "http://song-qa:8080"
-
-  - name: MAESTRO_REPOSITORIES_1_NAME
-    value: "local song"
-
-  - name: MAESTRO_REPOSITORIES_1_ORGANIZATION
-    value: "overture"
-
-  - name: MAESTRO_REPOSITORIES_1_COUNTRY
-    value: "OICR"
-
-  - name: MAESTRO_FAILURELOG_DIR
-    value: "/app-log"
-
-  - name: MAESTRO_NOTIFICATIONS_SLACK_ENABLED
-    value: "true"
-
-  - name: MAESTRO_NOTIFICATIONS_SLACK_URL
-    value: "secret"
-
-  - name: MAESTRO_NOTIFICATIONS_SLACK_CHANNEL
-    value: "maestro-argo-notif"
+  SERVER_PORT: "11235"
+  MAESTRO_ELASTICSEARCH_CLUSTERNODES_0: "http://elasticsearch-master:9200"
+  SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "confluent-qa-cp-kafka:9092"
+  # repos
+  MAESTRO_REPOSITORIES_0_CODE: "collab"
+  MAESTRO_REPOSITORIES_0_URL: "https://song.cancercollaboratory.org"
+  MAESTRO_REPOSITORIES_0_NAME: "collaboratory"
+  MAESTRO_REPOSITORIES_0_ORGANIZATION: "ICGC"
+  MAESTRO_REPOSITORIES_0_COUNTRY: "CA"
+  MAESTRO_REPOSITORIES_1_CODE: "song.overture"
+  MAESTRO_REPOSITORIES_1_URL: "http://song-qa:8080"
+  MAESTRO_REPOSITORIES_1_NAME: "local song"
+  MAESTRO_REPOSITORIES_1_ORGANIZATION: "overture"
+  MAESTRO_REPOSITORIES_1_COUNTRY: "OICR"
+  # slack
+  MAESTRO_NOTIFICATIONS_SLACK_ENABLED: "true"
+  MAESTRO_NOTIFICATIONS_SLACK_URL: "secret"
+  MAESTRO_NOTIFICATIONS_SLACK_CHANNEL: "maestro-argo-notif"
 
 
